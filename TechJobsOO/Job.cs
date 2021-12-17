@@ -34,14 +34,16 @@ namespace TechJobsOO
         public override bool Equals(object obj)
         {
             return obj is Job job &&
-                   EqualityComparer<PositionType>.Default.Equals(JobType, job.JobType) &&
-                   EqualityComparer<CoreCompetency>.Default.Equals(JobCoreCompetency, job.JobCoreCompetency);
+                   Id == job.Id;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(JobType, JobCoreCompetency);
+            return HashCode.Combine(Id);
         }
+
+        
+
 
     }
 }
