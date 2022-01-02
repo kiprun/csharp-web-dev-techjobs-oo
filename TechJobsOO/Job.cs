@@ -42,7 +42,43 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
-        
+        public override string ToString() //Needed so that ToString tests will pass
+        {
+            //returns sample with each field in seperate line
+            string idField = $"\nID: {Id}\n";
+            string employeeNameField = $"Name: {Name}\n";
+            string employerNameField = $"Employer: {EmployerName}\n";
+            string jobLocationField = $"Location: {EmployerLocation}\n";
+            string positionField = $"Position Type: {JobType}\n";
+            string competencyField = $"Core Compentency: {JobCoreCompetency}\n";
+
+            //returns sample for each field that is blank
+            if (employeeNameField == null)
+            {
+                employeeNameField = $"\nID: Data not available";
+            }
+            if (employerNameField == null)
+            {
+                employerNameField = $"\nID: Data not available";
+            }
+            if (jobLocationField == null)
+            {
+                jobLocationField = $"\nID: Data not available";
+            }
+            if (positionField == null)
+            {
+                positionField = $"\nID: Data not available";
+            }
+            if (competencyField == null)
+            {
+                competencyField = $"\nID: Data not available";
+            }
+
+            string sampleJob = idField + employeeNameField + employerNameField + jobLocationField + positionField + competencyField;
+            return sampleJob;
+        }
+
+
 
 
     }
