@@ -1,8 +1,10 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class PositionType: JobField
+    public class PositionType: JobField //extend JobField class
     {
+        //FIELDS HAVE BEEN COMMENTED OUT BECAUSE JOBFIELD CONTAINS ALL COMMON CODE
+
         //public int Id { get; }
         //private static int nextId = 1;
         //public string Value { get; set; }

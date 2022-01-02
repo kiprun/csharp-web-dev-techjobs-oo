@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TechJobsOO
 {
-    public abstract class JobField
+    public abstract class JobField //base class created to D.R.Y. repetition code from emp,loc,corecomp, and posit classes
     {
         public int Id { get;}
         private static int nextId = 1;

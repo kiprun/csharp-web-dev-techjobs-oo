@@ -5,7 +5,7 @@ namespace TechJobsOO
 {
     public class Job
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
         private static int nextId = 1;
 
         public string Name { get; set; }
@@ -16,12 +16,13 @@ namespace TechJobsOO
 
         // TODO: Add the two necessary constructors.
 
-        public Job()
+        public Job()//Constructor to initialize id field with a unique value. No parameters
         {
             Id = nextId;
             nextId++;
         }
         public Job(string name, Employer employerName, Location employerLocation, PositionType jobtype, CoreCompetency jobCoreCompentency): this()
+            //Constructor to assign values to parameters.  : this() calls id constructor
         {
             Name = name;
             EmployerName = employerName;
@@ -44,7 +45,7 @@ namespace TechJobsOO
 
         public override string ToString() //Needed so that ToString tests will pass
         {
-            //returns sample with each field in seperate line
+            //returns string with each field in seperate line
             string idField = $"\nID: {Id}\n";
             string employeeNameField = $"Name: {Name}\n";
             string employerNameField = $"Employer: {EmployerName}\n";
@@ -52,7 +53,7 @@ namespace TechJobsOO
             string positionField = $"Position Type: {JobType}\n";
             string competencyField = $"Core Competency: {JobCoreCompetency}\n";
 
-            //returns sample for each field that is blank
+            //returns string for each field that is blank
             if (Name == null)
             {
                 employeeNameField = $"Name: Data not available\n";

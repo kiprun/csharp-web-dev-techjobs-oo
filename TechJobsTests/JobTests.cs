@@ -4,7 +4,7 @@ using TechJobsOO;
 namespace TechJobsTests
 {
     [TestClass]
-    public class JobTests
+    public class JobTests //test
     {
         Job jobThree;
         
@@ -14,7 +14,7 @@ namespace TechJobsTests
             jobThree = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
         }
         [TestMethod]
-        public void TestSettingJobId()
+        public void TestSettingJobId()//test each job is assigned an id and that it unique to each job
         {
             Job jobOne = new Job();
             Job jobTwo = new Job();
@@ -22,7 +22,7 @@ namespace TechJobsTests
             Assert.IsTrue(jobOne.Id != jobTwo.Id);
         }
         [TestMethod]
-        public void TestJobConstructorSetsAllFields()
+        public void TestJobConstructorSetsAllFields()//test that all fields are assigned a value
         {
             
             Employer acme = new Employer("ACME");
@@ -34,6 +34,7 @@ namespace TechJobsTests
 
 
             Assert.IsTrue("Product Tester" == jobOne.Name);
+            Assert.AreEqual("ACME", jobOne.EmployerName.Value);
             Assert.AreEqual("Desert", jobOne.EmployerLocation.Value);
             Assert.AreEqual("Quality Control", jobOne.JobType.Value);
             Assert.AreEqual("Persistence", jobOne.JobCoreCompetency.ToString());//?

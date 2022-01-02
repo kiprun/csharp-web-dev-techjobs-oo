@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TechJobsOO
 {
-    class Program
+    class Program //prints out list of Job objects.  Not my code
     {
         static void Main(string[] args)
         {
