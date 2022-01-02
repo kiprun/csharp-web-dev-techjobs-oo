@@ -7,12 +7,11 @@ namespace TechJobsTests
     public class JobTests
     {
         Job jobThree;
-        Job jobFour;
+        
         [TestInitialize]
         public void TestJobExample()
         {
             jobThree = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
-            jobFour = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         }
         [TestMethod]
         public void TestSettingJobId()
@@ -57,18 +56,29 @@ namespace TechJobsTests
         {
             string testJob = $"\nID: { jobThree.Id}\nName: {jobThree.Name}\nEmployer: {jobThree.EmployerName}\n" +
                 $"Location: {jobThree.EmployerLocation}\nPosition Type: {jobThree.JobType}\n" +
-                $"Core Compentency: {jobThree.JobCoreCompetency}\n";
+                $"Core Competency: {jobThree.JobCoreCompetency}\n";
 
             Assert.AreEqual(testJob, jobThree.ToString());
         }
         [TestMethod]
-        public void TestToStringForEmptyDataFields()
+        public void TestForLabelAndDataForEachStringOnSeperateLine()//added ToString method in Job.cs to test
         {
-            //Job job = new Job();
-            string testJob = $"\nID: {jobFour.Id}\nName: {jobFour.Name}\nEmployer: {jobFour.EmployerName}\n" +
-                $"Location: {jobFour.EmployerLocation}\nPosition Type: {jobFour.JobType}\n" +
-                $"Core Compentency: {jobFour.JobCoreCompetency}\n";
-            Assert.AreEqual(testJob, jobFour.ToString());
+            Employer acme = new Employer("ACME");
+            Location desert = new Location("Desert");
+            PositionType qualityControl = new PositionType("Quality Control");
+            CoreCompetency persistence = new CoreCompetency("Persistence");
+                     
+            Job job = new Job("Product tester", acme, desert, qualityControl, persistence);                     
+            Assert.AreEqual("\nID: 2\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality Control\nCore Competency: Persistence\n", job.ToString());
+        }
+        [TestMethod]
+        public void TestToStringForEmptyDataFields()//added ToString method in Job.cs to test
+        {
+            Job job = new Job();
+            string testJob = $"\nID: 13\nName: Data not available\nEmployer: Data not available\n" +
+                $"Location: Data not available\nPosition Type: Data not available\n" +
+                $"Core Competency: Data not available\n";
+            Assert.AreEqual(testJob, job.ToString());
         }
 
     }

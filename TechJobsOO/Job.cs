@@ -5,7 +5,7 @@ namespace TechJobsOO
 {
     public class Job
     {
-        public int Id { get; }
+        public int Id { get; set; }
         private static int nextId = 1;
 
         public string Name { get; set; }
@@ -50,28 +50,28 @@ namespace TechJobsOO
             string employerNameField = $"Employer: {EmployerName}\n";
             string jobLocationField = $"Location: {EmployerLocation}\n";
             string positionField = $"Position Type: {JobType}\n";
-            string competencyField = $"Core Compentency: {JobCoreCompetency}\n";
+            string competencyField = $"Core Competency: {JobCoreCompetency}\n";
 
             //returns sample for each field that is blank
-            if (employeeNameField == null)
+            if (Name == null)
             {
-                employeeNameField = $"\nID: Data not available";
+                employeeNameField = $"Name: Data not available\n";
             }
-            if (employerNameField == null)
+            if (EmployerName == null)
             {
-                employerNameField = $"\nID: Data not available";
+                employerNameField = $"Employer: Data not available\n";
             }
-            if (jobLocationField == null)
+            if (EmployerLocation == null)
             {
-                jobLocationField = $"\nID: Data not available";
+                jobLocationField = $"Location: Data not available\n";
             }
-            if (positionField == null)
+            if (JobType == null)
             {
-                positionField = $"\nID: Data not available";
+                positionField = $"Position Type: Data not available\n";
             }
-            if (competencyField == null)
+            if (JobCoreCompetency == null)
             {
-                competencyField = $"\nID: Data not available";
+                competencyField = $"Core Competency: Data not available\n";
             }
 
             string sampleJob = idField + employeeNameField + employerNameField + jobLocationField + positionField + competencyField;

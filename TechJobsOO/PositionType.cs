@@ -35,7 +35,7 @@ namespace TechJobsOO
         //{
         //    return HashCode.Combine(Id);
         //}
-        public PositionType(string value) : base(value)
+        public PositionType(string value) : base(value)//empty constructor
         {
         }
     }

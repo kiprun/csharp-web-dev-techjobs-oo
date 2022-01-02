@@ -34,7 +34,7 @@ namespace TechJobsOO
         //{
         //    return Value;
         //}
-        public Location(string value) : base(value)
+        public Location(string value) : base(value)//empty constructor
         {
         }
     }
