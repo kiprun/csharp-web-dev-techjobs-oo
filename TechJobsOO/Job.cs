@@ -5,7 +5,7 @@ namespace TechJobsOO
 {
     public class Job
     {
-        public int Id { get; set; } 
+        public int Id { get;} 
         private static int nextId = 1;
 
         public string Name { get; set; }
@@ -54,29 +54,32 @@ namespace TechJobsOO
             string competencyField = $"Core Competency: {JobCoreCompetency}\n";
 
             //returns string for each field that is blank
-            if (Name == null)
+            if (Name.Length <= 0) 
             {
                 employeeNameField = $"Name: Data not available\n";
             }
-            if (EmployerName == null)
+            if (EmployerName.Value.Length  <= 0)
             {
                 employerNameField = $"Employer: Data not available\n";
             }
-            if (EmployerLocation == null)
+            if (EmployerLocation.Value.Length <= 0)
             {
                 jobLocationField = $"Location: Data not available\n";
             }
-            if (JobType == null)
+            if (JobType.Value.Length <= 0)
             {
                 positionField = $"Position Type: Data not available\n";
             }
-            if (JobCoreCompetency == null)
+            if (JobCoreCompetency.Value.Length <= 0)
             {
                 competencyField = $"Core Competency: Data not available\n";
             }
 
             string sampleJob = idField + employeeNameField + employerNameField + jobLocationField + positionField + competencyField;
             return sampleJob;
+
+
+         
         }
 
 
