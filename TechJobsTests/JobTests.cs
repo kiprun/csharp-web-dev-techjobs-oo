@@ -21,6 +21,7 @@ namespace TechJobsTests
             Job jobOne = new Job();
             Job jobTwo = new Job();
             Assert.IsTrue(jobOne.Id != jobTwo.Id);
+            Assert.AreEqual(jobOne.Id,jobTwo.Id - 1);
         }
         [TestMethod]
         public void TestJobConstructorSetsAllFields()//test that all fields are assigned a value

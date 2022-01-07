@@ -58,19 +58,19 @@ namespace TechJobsOO
             {
                 employeeNameField = $"Name: Data not available\n";
             }
-            if (EmployerName.Value.Length  <= 0)
-            {
+            if (EmployerName.Value  == "" || EmployerName.Value == null)//test for empty values and null values
+            { 
                 employerNameField = $"Employer: Data not available\n";
             }
-            if (EmployerLocation.Value.Length <= 0)
+            if (EmployerLocation.Value == "" || EmployerLocation.Value == null)//test for empty values and null values
             {
                 jobLocationField = $"Location: Data not available\n";
             }
-            if (JobType.Value.Length <= 0)
+            if (JobType.Value == "" || JobType.Value == null)//test for empty values and null values
             {
                 positionField = $"Position Type: Data not available\n";
             }
-            if (JobCoreCompetency.Value.Length <= 0)
+            if (JobCoreCompetency.Value == "" || JobCoreCompetency.Value == null)//test for empty values and null values
             {
                 competencyField = $"Core Competency: Data not available\n";
             }

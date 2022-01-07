@@ -35,6 +35,10 @@ namespace TechJobsOO
         //{
         //    return Value;
         //}
+        public Employer() : base()//no argument constructor/null
+        {
+        }
+
         public Employer(string value) : base(value)//empty constructor
         {
         }

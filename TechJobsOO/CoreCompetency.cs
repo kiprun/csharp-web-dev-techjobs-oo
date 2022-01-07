@@ -37,6 +37,9 @@ namespace TechJobsOO
         //{
         //    return Value;
         //}
+        public CoreCompetency() : base()//no argument constructor/null
+        {
+        }
         public CoreCompetency(string value) : base(value)//empty constructor
         {
         }
